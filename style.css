@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #3a4052e5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", san-serif;
+}
+
+#top {
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+}
+
+body {
+    line-height: 1.5;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.home-button {
+    position: fixed;
+    margin: 15px;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: rgb(5, 150, 150);
+    opacity: 0.5;
+}
+
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 3em;
+    color: #fff;
+}
+
+#top h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3em;
+    padding: 10px 0;
+}
+
+.intro p {
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.2em;
+    max-width: 700px;
+    padding: 10px 0;
+}
+
+.intro-link {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+
+}
+
+.intro-button {
+    color: #fff;
+    border: 1.5px #fff solid;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border-radius: 7px;
+    opacity: 0.9;
+}
+
+.intro-button:hover {
+    transform: scale(0.96);
+}
+
+.content {
+    padding: 40px;
+    line-height: 2em;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.content ul {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto
+}
+
+.content a {
+    color:rgb(5, 150, 150);
+}
+
+.content a:hover {
+    color:rgb(196, 90, 3);
+    border-bottom: 2px solid rgba(233, 113, 15, 0.938);
+
+}
+
+#learn {
+    background-color: rgb(228, 246, 252);
+}
+
+#appreciate {
+    background-color: #fff6f6;
+}
