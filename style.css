@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #3a4052e5;
+    --primary-color2: rgb(5, 150, 150);
     scroll-behavior: smooth;
 }
 
@@ -99,7 +100,29 @@ h2 {
 
 .intro-button:hover {
     transform: scale(0.96);
+
 }
+
+.nav-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 50px;
+}
+
+.nav-button {
+    padding: 0 20px 40px 20px;
+    font-size: 3em;
+    color: var(--primary-color2);
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 
 .content {
     padding: 40px;
@@ -108,32 +131,46 @@ h2 {
 
 .content h1 {
     font-size: 2.5em;
+    max-width: 800px;
     font-weight: 800;
-    line-height: 1.3em;
-    letter-spacing: 1.5px;
+    margin: auto;
+    line-height: 2em;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    text-align: center;
+}
+
+.content h2 {
+    font-size: 2em;
+    max-width: 800px;
+    font-weight: 700;
+    margin: auto;
+    line-height: 2em;
+    letter-spacing: 1px;
 }
 
 .content p {
     font-size: 1.2rem;
     max-width: 800px;
     margin: auto;
+    line-height: 2;
+    padding: 5px 0;
+    /* text-align: center; */
 }
 
 .content ul {
     font-size: 1.1rem;
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
-    padding: 20px;
+    line-height: 2em;
+
 }
 
 .content a {
-    color:rgb(5, 150, 150);
+    color: rgb(5, 150, 150);
 }
 
 .content a:hover {
-    color:rgb(196, 90, 3);
+    color: rgb(196, 90, 3);
     border-bottom: 2px solid rgba(233, 113, 15, 0.938);
 
 }
@@ -144,4 +181,16 @@ h2 {
 
 #appreciate {
     background-color: #fff6f6;
+}
+
+.divider {
+    border: 1px dashed grey;
+    margin: 40px auto;
+    max-width: 850px;
+}
+
+
+.content .quote {
+    font: small-caps italic bold 28px/1 sans-serif;
+    padding: 30px;
 }
