@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #3a4052e5;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -59,7 +60,7 @@ a {
 }
 
 #top h1 {
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 800;
     line-height: 1.3em;
     letter-spacing: 1.5px;
@@ -85,7 +86,6 @@ h2 {
     display: flex;
     padding: 10px;
     flex-wrap: wrap;
-
 }
 
 .intro-button {
