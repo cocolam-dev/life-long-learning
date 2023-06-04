@@ -144,7 +144,7 @@ h2 {
 }
 /* --------------------------------------BOTTOM OF PAGE NAVIGATION BUTTONS - END */
 
-.content {
+.content, .youtube {
     padding: 40px;
     line-height: 2em;
 }
@@ -154,6 +154,7 @@ h2 {
     max-width: 800px;
     font-weight: 800;
     margin: auto;
+    padding: 20px 0;
     line-height: 1.5em;
     letter-spacing: 1.2px;
     text-transform: uppercase;
@@ -169,7 +170,7 @@ h2 {
 }
 
 .content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 800px;
     margin: auto;
     line-height: 2;
@@ -207,14 +208,20 @@ h2 {
 
 
 .divider {
-    border: 1px dashed grey;
+    border: 1px solid rgb(207, 207, 207);
     margin: 40px auto;
     max-width: 850px;
 }
 
 
 .content .quote {
-    font: small-caps italic 28px/1 sans-serif;
+    font: small-caps italic 1.5rem/1 sans-serif;
     padding: 30px;
     line-height: 1.5;
+}
+
+.youtube {
+    max-width: 800px;
+    margin: auto;
+    padding: 5px 0;
 }
