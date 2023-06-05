@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary-color: #3a4052e5;
+    --primary-color: #3a4052;
     --primary-color2: rgb(5, 150, 150);
     scroll-behavior: smooth;
 }
@@ -123,7 +123,7 @@ h2 {
 
 
 /* --------------------------------------BOTTOM OF PAGE NAVIGATION BUTTONS - START */
-.nav-link {
+/* .nav-link {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -141,8 +141,16 @@ h2 {
 .nav-button:hover {
     transform: scale(1.1);
     cursor: pointer;
-}
+} */
 /* --------------------------------------BOTTOM OF PAGE NAVIGATION BUTTONS - END */
+
+#filterInput {
+    display: flex;
+    max-width: 800px;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin: auto;
+}
 
 .content, .youtube {
     padding: 40px;
@@ -178,7 +186,7 @@ h2 {
     /* text-align: center; */
 }
 
-.content ul {
+.content ol {
     font-size: 1.1rem;
     max-width: 750px;
     margin: auto;
