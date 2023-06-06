@@ -85,13 +85,13 @@ h2 {
     padding: 10px 0;
 }
 
-.intro-link {
+.menu-link {
     display: flex;
     padding: 10px;
     flex-wrap: wrap;
 }
 
-.intro-button {
+.menu-button {
     color: #fff;
     border: 1.5px #fff solid;
     padding: 10px 20px;
@@ -100,7 +100,7 @@ h2 {
     opacity: 0.9;
 }
 
-.intro-button:hover {
+.menu-button:hover {
     transform: scale(0.96);
 
 }
@@ -109,7 +109,7 @@ h2 {
 
 /* --------------------------------------TOP MENU - START */
 
-.top-menu {
+.main-menu {
     display: flex;
     justify-content: center;
     line-height: 15px;
@@ -152,6 +152,27 @@ h2 {
     margin: auto;
 }
 
+#filterList {
+    display: flex;
+    justify-content: center;
+    line-height: 15px;
+    font-size: 1.2em;
+    top: 0;
+}
+
+.filter-button {
+    border: 2px #fff solid;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border-radius: 7px;
+    color: rgb(5, 150, 150);
+}
+
+.filter-button:hover {
+    transform: scale(0.95);
+
+}
+
 .content, .youtube {
     padding: 40px;
     line-height: 2em;
@@ -191,14 +212,32 @@ h2 {
     max-width: 750px;
     margin: auto;
     line-height: 2;
+}
+
+.content ul {
+    font-size: 1.1rem;
+    max-width: 750px;
+    margin: auto;
+    line-height: 2;
 
 }
 
-.content a {
+/* an "a" tag within an element with a class called article-item */
+.article-item a {
     color: rgb(5, 150, 150);
 }
 
-.content a:hover {
+.article-item a:hover {
+    color: rgb(196, 90, 3);
+    border-bottom: 2px solid rgba(233, 113, 15, 0.938);
+}
+
+/* an "a" tag with a class called link*/
+a.link  {
+    color: rgb(5, 150, 150);
+}
+
+a.link:hover {
     color: rgb(196, 90, 3);
     border-bottom: 2px solid rgba(233, 113, 15, 0.938);
 

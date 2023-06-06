@@ -1,3 +1,5 @@
+// ---------------------------------------------------------------Homepage article filter
+
 //Get input element
 let filterInput = document.getElementById("filterInput");
 
@@ -35,6 +37,7 @@ function filterNames() {
 
 }
 
+// ---------------------------------------------------------------Populate article list in Homepage 
 let articles;
 
 function httpGet() {
@@ -54,9 +57,69 @@ function httpGet() {
                 ol.appendChild(li);
             }
         }
-        // console.log(articles);
     }
     xmlHttp.send();
 }
-
 httpGet();
+
+
+// ---------------------------------------------------------------Populate article list in Homepage 
+
+let tagList = [];
+
+// function getTagList() {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("GET", "articles.json", true);
+//     xhr.onload = function () {
+//         if (this.status === 200) {
+//             articles = JSON.parse(xhr.responseText).articles;
+//             for (let i = 0; i < articles.length; i++) {
+//                 let tags = articles[i].tags;            
+//                 let filterButtonList = document.getElementById("filterButtonList");
+//                 for (const tag of tags) {
+//                     if (!tagList.includes(tag)) {
+//                         tagList.push(tag);
+//                         const filterButton = document.createElement("button");
+//                         filterButton.className = "filterButton";
+//                         filterButton.textContent = tag;
+//                         filterButtonList.appendChild(filterButton);
+//                     }
+//                 }
+
+//                 console.log(tagList);
+//             }
+//         }
+//     }
+//     xhr.send();
+// }
+
+// getTagList();
+
+function getTagList() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "articles.json", true);
+    xhr.onload = function () {
+        if (this.status === 200) {
+            articles = JSON.parse(xhr.responseText).articles;
+            for (let i = 0; i < articles.length; i++) {
+                let tags = articles[i].tags;            
+                let filterList = document.getElementById("filterList");
+                for (const tag of tags) {
+                    if (!tagList.includes(tag)) {
+                        tagList.push(tag);
+                        const a = document.createElement("a");
+                        a.className = "filter-button";
+                        a.href="#";
+                        a.textContent = tag;
+                        filterList.appendChild(a);
+                    }
+                }
+
+                console.log(tagList);
+            }
+        }
+    }
+    xhr.send();
+}
+
+getTagList();

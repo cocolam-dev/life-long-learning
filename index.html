@@ -30,21 +30,18 @@
             <p>Never stop exploring. Never stop learning.</p>
             <p>Make the most of our time on this beautiful planet.</p>
 
-            <div class="intro-link">
-                <a href="#about" class="intro-button">About</a>
-                <a href="#learn" class="intro-button">Learn</a>
-                <a href="#appreciate" class="intro-button">Appreciate</a>
+            <div class="menu-link">
+                <a href="#about" class="menu-button">About</a>
+                <a href="#learn" class="menu-button">Learn</a>
+                <a href="#appreciate" class="menu-button">Appreciate</a>
             </div>
         </div>
     </section>
 
-    <div class="top-menu">
-        <a href="#top" class="intro-button">Home</a>
-        <a href="#about" class="intro-button">About</a>
-        <a href="#play" class="intro-button">Play</a>
-        <a href="#learn" class="intro-button">Learn</a>
-        <!-- <a href="#learn" class="intro-button">Learn</a>
-        <a href="#appreciate" class="intro-button">Appreciate</a> -->
+    <div class="main-menu">
+        <a href="#top" class="menu-button">Home</a>
+        <a href="#about" class="menu-button">About</a>
+        <a href="#learn" class="menu-button">Learn</a>
     </div>
 
     <section class="content" id="about">
@@ -55,13 +52,15 @@
         <p>Rely on systems, not motivation.</p>
         <p>Be grateful for what you have.</p>
         <p>Stay curious.</p>
-        
+
     </section>
 
     <section class="content" id="learn">
         <h1>Learn</h1>
         <input type="text" id="filterInput" size="100" placeholder="Search articles...">
-        <br/>
+        <br />
+        <div id="filterList"></div>
+        <br />
         <ol id="article-list" class="article-list">
         </ol>
     </section>
