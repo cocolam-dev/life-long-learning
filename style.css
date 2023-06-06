@@ -146,10 +146,10 @@ h2 {
 
 #filterInput {
     display: flex;
-    max-width: 800px;
     padding: 10px;
     font-size: 1.1rem;
     margin: auto;
+    text-overflow: ellipsis;
 }
 
 #filterList {
@@ -222,7 +222,7 @@ h2 {
 
 }
 
-/* an "a" tag within an element with a class called article-item */
+/* an "a" tag inside/under an element with a class called article-item */
 .article-item a {
     color: rgb(5, 150, 150);
 }
@@ -296,6 +296,10 @@ a.link:hover {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+input {
+    max-width: 100%;
 }
 
 }
