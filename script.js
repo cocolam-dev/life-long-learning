@@ -1,4 +1,4 @@
-// ---------------------------------------------------------------Homepage article filter
+// ---------------------------------------------------------------Homepage article search bar
 
 //Get input element
 let filterInput = document.getElementById("filterInput");
@@ -63,37 +63,9 @@ function httpGet() {
 httpGet();
 
 
-// ---------------------------------------------------------------Populate article list in Homepage 
+// ---------------------------------------------------------------Populate keyword / tag list in Homepage 
 
 let tagList = [];
-
-// function getTagList() {
-//     var xhr = new XMLHttpRequest();
-//     xhr.open("GET", "articles.json", true);
-//     xhr.onload = function () {
-//         if (this.status === 200) {
-//             articles = JSON.parse(xhr.responseText).articles;
-//             for (let i = 0; i < articles.length; i++) {
-//                 let tags = articles[i].tags;            
-//                 let filterButtonList = document.getElementById("filterButtonList");
-//                 for (const tag of tags) {
-//                     if (!tagList.includes(tag)) {
-//                         tagList.push(tag);
-//                         const filterButton = document.createElement("button");
-//                         filterButton.className = "filterButton";
-//                         filterButton.textContent = tag;
-//                         filterButtonList.appendChild(filterButton);
-//                     }
-//                 }
-
-//                 console.log(tagList);
-//             }
-//         }
-//     }
-//     xhr.send();
-// }
-
-// getTagList();
 
 function getTagList() {
     var xhr = new XMLHttpRequest();
@@ -102,20 +74,19 @@ function getTagList() {
         if (this.status === 200) {
             articles = JSON.parse(xhr.responseText).articles;
             for (let i = 0; i < articles.length; i++) {
-                let tags = articles[i].tags;            
+                let tags = articles[i].tags;
                 let filterList = document.getElementById("filterList");
                 for (const tag of tags) {
                     if (!tagList.includes(tag)) {
                         tagList.push(tag);
-                        const a = document.createElement("a");
-                        a.className = "filter-button";
-                        a.href="#";
-                        a.textContent = tag;
-                        filterList.appendChild(a);
+                        const btn = document.createElement("button");
+                        btn.className = "filterButton";
+                        btn.href = "#";
+                        btn.textContent = tag;
+                        filterList.appendChild(btn);
+                        btn.addEventListener("click", () => filterByKeyword(btn));
                     }
                 }
-
-                console.log(tagList);
             }
         }
     }
@@ -123,3 +94,42 @@ function getTagList() {
 }
 
 getTagList();
+
+// ---------------------------------------------------------------Homepage article filter by tag buttons
+
+let filterButton = document.getElementsByClassName("filterButton");
+let selectedTags = [];
+
+function filterByKeyword(btn) {
+    const tag = btn.textContent;
+    btn.classList.toggle("selected");
+    const isSelected = btn.classList.contains("selected");
+    const articleItems = document.querySelectorAll(".article-item");
+
+
+    const index = selectedTags.indexOf(tag);
+    if (index === -1) {
+        //tag Not inside selectedTags array
+        if (isSelected) {
+            selectedTags.push(tag);
+        }
+    } else {
+        //tag inside selectedTags array
+        if (!isSelected) {
+            selectedTags.splice(index, 1);
+        }
+    }
+
+    for (let i = 0; i < articles.length; i++) {
+        // if the selectedTags array is empty, or, 
+        // go through each tag of the ith article, and see if it's included in the selectedTags array
+        // and if found in the find function, the first array item will be returned, and a returned value is considered true
+        // if either is true, then display the ith article item
+        if (selectedTags.length === 0 || articles[i].tags.find((t) => selectedTags.includes(t))) {
+            articleItems[i].style.display = "";
+        } else {
+            articleItems[i].style.display = "none";
+        }
+    }
+}
+

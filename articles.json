@@ -9,12 +9,12 @@
         {
             "title":"Just a few minutes a day to learn a new skill",
             "url":"2.html",
-            "tags":["goals","learn","improve"]
+            "tags":["learn"]
         },
         {
             "title":"If at first you don't succeed, try, try again",
             "url":"3.html",
-            "tags":["goals","learn","improve"]
+            "tags":["learn"]
         }
     ]
 }

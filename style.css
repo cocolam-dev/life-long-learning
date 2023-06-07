@@ -160,17 +160,24 @@ h2 {
     top: 0;
 }
 
-.filter-button {
+.filterButton {
     border: 2px #fff solid;
     padding: 10px 20px;
     margin: 10px 10px;
     border-radius: 7px;
     color: rgb(5, 150, 150);
+    background-color: rgb(228, 246, 252);
+    font-size: 1rem;
 }
 
-.filter-button:hover {
+.filterButton:hover {
     transform: scale(0.95);
+    cursor: pointer;
+}
 
+.selected {
+    background-color: rgba(247, 165, 98, 0.938);
+    cursor: pointer;
 }
 
 .content, .youtube {
@@ -199,7 +206,7 @@ h2 {
 }
 
 .content p {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     max-width: 800px;
     margin: auto;
     line-height: 2;
@@ -208,14 +215,14 @@ h2 {
 }
 
 .content ol {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     max-width: 750px;
     margin: auto;
     line-height: 2;
 }
 
 .content ul {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     max-width: 750px;
     margin: auto;
     line-height: 2;
