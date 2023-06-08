@@ -176,7 +176,7 @@ h2 {
 }
 
 .selected {
-    background-color: rgba(247, 165, 98, 0.938);
+    background-color: rgba(252, 201, 160, 0.938);
     cursor: pointer;
 }
 
@@ -202,6 +202,15 @@ h2 {
     font-weight: 700;
     margin: auto;
     line-height: 2em;
+    letter-spacing: 1px;
+}
+
+.content h3 {
+    font-size: 1.5em;
+    max-width: 800px;
+    font-weight: 700;
+    margin: auto;
+    line-height: 1.8em;
     letter-spacing: 1px;
 }
 

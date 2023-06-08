@@ -37,30 +37,53 @@ function filterNames() {
 
 }
 
-// ---------------------------------------------------------------Populate article list in Homepage 
+// ---------------------------------------------------------------Populate article list in Homepage using AJAX
 let articles;
 
-function httpGet() {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "articles.json", true); // false for synchronous request
-    xmlHttp.onload = function () {
-        if (this.status == 200) {
-            articles = JSON.parse(xmlHttp.responseText).articles;
-            let ol = document.getElementById("article-list");
-            for (let i = 0; i < articles.length; i++) {
+// function httpGet() {
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.open("GET", "articles.json", true); // false for synchronous request
+//     xmlHttp.onload = function () {
+//         if (this.status == 200) {
+//             articles = JSON.parse(xmlHttp.responseText).articles;
+//             let ul = document.getElementById("article-list");
+//             for (let i = 0; i < articles.length; i++) {
+//                 const li = document.createElement("li");
+//                 li.className = "article-item";
+//                 const a = document.createElement("a");
+//                 a.href = articles[i].url;
+//                 a.textContent = articles[i].id + " - " + articles[i].title;
+//                 li.appendChild(a);
+//                 ul.appendChild(li);
+//             }
+//         }
+//     }
+//     xmlHttp.send();
+// }
+// httpGet();
+// ---------------------------------------------------------------Populate article list in Homepage using Fetch API
+
+function populateArticleList() {
+    let ul = document.getElementById("article-list");
+    fetch("articles.json")
+        .then(
+            res => res.json())
+        .then((data) => {
+            data.articles.forEach(function (article) {
                 const li = document.createElement("li");
                 li.className = "article-item";
                 const a = document.createElement("a");
-                a.href = articles[i].url;
-                a.textContent = articles[i].title;
+                a.href = article.url;
+                a.textContent = article.id + " - " + article.title;
                 li.appendChild(a);
-                ol.appendChild(li);
-            }
-        }
-    }
-    xmlHttp.send();
+                ul.appendChild(li);
+            })
+        }).catch(err => console.log("Oops! "+err));
 }
-httpGet();
+
+populateArticleList();
+
+
 
 
 // ---------------------------------------------------------------Populate keyword / tag list in Homepage 
