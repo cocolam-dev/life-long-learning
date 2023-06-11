@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Snow chasing near Sydney</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="style.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <section class="landing-pic">
+        <section class="bg"></section>
+        <div class="loading-text">0%</div>
+    </section>
+    <div class="main-menu">
+        <a href="index.html" class="menu-button">Home</a>
+        <a href="index.html" class="menu-button">Next</a>
+    </div>
+    <section class="content">
+
+        <h1>
+            Snow chasing near Sydney
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem animi tenetur quaerat saepe tempora fugit,
+            error, culpa recusandae nihil ea aliquid officia rerum accusantium! Error sed iusto excepturi quidem
+            placeat.
+        </p>
+
+        <div id="map"></div>
+
+        <div class="divider"></div>
+    </section>
+
+
+
+    <script>
+        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
+            key: "AIzaSyAe1AmLov8kVvChuHke-Cp8RUApi6vvu5w",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script>
+        <!-- <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe1AmLov8kVvChuHke-Cp8RUApi6vvu5wY&callback=initMap">
+        </script> -->
+    <script src="a1.js"></script>
+
+</body>
+
+</html>
