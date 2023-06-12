@@ -11,10 +11,10 @@ function filterNames() {
     let filterValue = document.getElementById("filterInput").value.toUpperCase();
 
     //get names ul
-    let ol = document.getElementById("article-list");
+    let ul = document.getElementById("article-list");
 
     //get li from ul
-    let li = ol.querySelectorAll("li.article-item");
+    let li = ul.querySelectorAll("li.article-item");
 
     //loop through collection item li
     for (let i = 0; i < li.length; i++) {
@@ -37,9 +37,10 @@ function filterNames() {
 
 }
 
-// ---------------------------------------------------------------Populate article list in Homepage using AJAX
-let articles;
 
+// ---------------------------------------------------------------Populate article list in Homepage using AJAX
+// let articles;
+//
 // function httpGet() {
 //     var xmlHttp = new XMLHttpRequest();
 //     xmlHttp.open("GET", "articles.json", true); // false for synchronous request
@@ -63,6 +64,8 @@ let articles;
 // httpGet();
 // ---------------------------------------------------------------Populate article list in Homepage using Fetch API
 
+// let articles;
+
 function populateArticleList() {
     let ul = document.getElementById("article-list");
     fetch("articles.json")
@@ -85,6 +88,29 @@ populateArticleList();
 
 
 
+// ---------------------------------------------------------------Populate appreciate article list in Homepage using Fetch API
+
+// let appreciateArticles;
+
+function populateArticleListA() {
+    let ulA = document.getElementById("article-listA");
+    fetch("articles.json")
+        .then(
+            res => res.json())
+        .then((data) => {
+            data.appreciate.forEach(function (article) {
+                const liA = document.createElement("li");
+                liA.className = "article-itemA";
+                const aA = document.createElement("a");
+                aA.href = article.url;
+                aA.textContent = article.id + " - " + article.title;
+                liA.appendChild(aA);
+                ulA.appendChild(liA);
+            })
+        }).catch(err => console.log("Oops! "+err));
+}
+
+populateArticleListA();
 
 // ---------------------------------------------------------------Populate keyword / tag list in Homepage 
 
