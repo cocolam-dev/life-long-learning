@@ -37,6 +37,7 @@ function filterNames() {
 
 }
 
+
 // ---------------------------------------------------------------Populate article list in Homepage using AJAX
 // let articles;
 //

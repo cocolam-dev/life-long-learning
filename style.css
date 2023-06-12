@@ -225,6 +225,7 @@ h2 {
     margin: auto;
     line-height: 2em;
     letter-spacing: 1px;
+    padding: 0;
 }
 
 .content h3 {
@@ -258,6 +259,17 @@ h2 {
     margin: auto;
     line-height: 2;
 
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.contentImg {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* an "a" tag inside/under an element with a class called article-item */

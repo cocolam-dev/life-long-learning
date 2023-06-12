@@ -26,12 +26,16 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 
 const markers = [
   {
-    latLng: { lat: -33.7037, lng: 149.8543 },
-    content: "<p>Oberon</p>"
+    latLng: { lat: -33.7097, lng: 149.8602 },
+    content: "Oberon public toilet"
   },
   {
     latLng: { lat: -33.949, lng: 149.855 },
-    content: "<p>Boggy Swamp Road</p>"
+    content: "Boggy Swamp Road, Vulcan State Forest"
+  },
+  {
+    latLng: { lat: -33.7210, lng: 150.2859 },
+    content: "Cahill's lookout"
   }
 ]
 
