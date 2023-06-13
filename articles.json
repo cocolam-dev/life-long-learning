@@ -1,5 +1,5 @@
 {
-    "articles": [
+    "learn": [
         {
             "id":"1",
             "title":"How a muscle weakness disease makes me stronger than ever",
@@ -27,10 +27,10 @@
         }
     ],
     
-    "appreciate": [
+    "play": [
         {
             "id":"1",
-            "title":"Snow chasing near Sydney",
+            "title":"Snow chasing near Sydney with your furry friend",
             "url":"a1.html",
             "tags":["Australia","NSW", "Sydney", "snow", "dog-friendly"]
 

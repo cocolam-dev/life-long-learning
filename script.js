@@ -1,20 +1,22 @@
 // ---------------------------------------------------------------Homepage article search bar
 
 //Get input element
-let filterInput = document.getElementById("filterInput");
+let learnFilterInput = document.getElementById("learn-filter-input");
+let playFilterInput = document.getElementById("play-filter-input");
 
 //Add event listener
-filterInput.addEventListener("keyup", filterNames);
+learnFilterInput.addEventListener("keyup", () => filterNames("learn-filter-input", "learn-list", "learnItem", learnArticles));
+playFilterInput.addEventListener("keyup", () => filterNames("play-filter-input", "play-list", "playItem", playArticles));
 
-function filterNames() {
+function filterNames(filterInputId, ulId, liClassName, articles) {
     //get value of input
-    let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    let filterValue = document.getElementById(filterInputId).value.toUpperCase();
 
     //get names ul
-    let ul = document.getElementById("article-list");
+    let ul = document.getElementById(ulId);
 
     //get li from ul
-    let li = ul.querySelectorAll("li.article-item");
+    let li = ul.querySelectorAll("li." + liClassName);
 
     //loop through collection item li
     for (let i = 0; i < li.length; i++) {
@@ -66,25 +68,25 @@ function filterNames() {
 
 // let articles;
 
-function populateArticleList() {
-    let ul = document.getElementById("article-list");
-    fetch("articles.json")
-        .then(
-            res => res.json())
-        .then((data) => {
-            data.articles.forEach(function (article) {
-                const li = document.createElement("li");
-                li.className = "article-item";
-                const a = document.createElement("a");
-                a.href = article.url;
-                a.textContent = article.id + " - " + article.title;
-                li.appendChild(a);
-                ul.appendChild(li);
-            })
-        }).catch(err => console.log("Oops! "+err));
-}
+// function populateArticleList() {
+//     let ul = document.getElementById("article-list");
+//     fetch("articles.json")
+//         .then(
+//             res => res.json())
+//         .then((data) => {
+//             data.articles.forEach(function (article) {
+//                 const li = document.createElement("li");
+//                 li.className = "article-item";
+//                 const a = document.createElement("a");
+//                 a.href = article.url;
+//                 a.textContent = article.id + " - " + article.title;
+//                 li.appendChild(a);
+//                 ul.appendChild(li);
+//             })
+//         }).catch(err => console.log("Oops! "+err));
+// }
 
-populateArticleList();
+// populateArticleList();
 
 
 
@@ -107,53 +109,103 @@ function populateArticleListA() {
                 liA.appendChild(aA);
                 ulA.appendChild(liA);
             })
-        }).catch(err => console.log("Oops! "+err));
+        }).catch(err => console.log("Oops! " + err));
 }
 
 populateArticleListA();
 
+// ---------------------------------------------------------------Populate article lists in Homepage using Fetch API
+
+
+function populateArticleList(jsonFile) {
+
+    fetch(jsonFile)
+        .then(
+            res => res.json())
+        .then((data) => {
+
+            populate(data.learn, "learn-list", "learnItem");
+            populate(data.play, "play-list", "playItem");
+
+        }).catch(err => console.log("Oops! " + err));
+}
+
+function populate(posts, listId, liClassName) {
+    let ul = document.getElementById(listId);
+    posts.forEach(function (post) {
+        const li = document.createElement("li");
+        li.className = liClassName;
+        const a = document.createElement("a");
+        a.href = post.url;
+        a.textContent = post.id + " - " + post.title;
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+}
+
+
+populateArticleList("articles.json");
+
 // ---------------------------------------------------------------Populate keyword / tag list in Homepage 
 
-let tagList = [];
+let learnArticles = [];
+let playArticles = [];
+let learnTagList = [];
+let playTagList = [];
+
+let learnSelectedTags = [];
+let playSelectedTags = [];
+
 
 function getTagList() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "articles.json", true);
     xhr.onload = function () {
         if (this.status === 200) {
-            articles = JSON.parse(xhr.responseText).articles;
-            for (let i = 0; i < articles.length; i++) {
-                let tags = articles[i].tags;
-                let filterList = document.getElementById("filterList");
-                for (const tag of tags) {
-                    if (!tagList.includes(tag)) {
-                        tagList.push(tag);
-                        const btn = document.createElement("button");
-                        btn.className = "filterButton";
-                        btn.href = "#";
-                        btn.textContent = tag;
-                        filterList.appendChild(btn);
-                        btn.addEventListener("click", () => filterByKeyword(btn));
-                    }
-                }
-            }
+            let resText = JSON.parse(xhr.responseText);
+            learnArticles = resText.learn;
+            playArticles = resText.play;
+            generateTagBtns(resText.learn, "learn-filter-list", learnTagList, "#learn-list li", learnSelectedTags);
+            generateTagBtns(resText.play, "play-filter-list", playTagList, "#play-list li", playSelectedTags);
         }
     }
     xhr.send();
 }
 
+
+function generateTagBtns(articles, filterListId, tagList, articleItemsSelector, selectedTags) {
+
+    for (let i = 0; i < articles.length; i++) {
+        let tags = articles[i].tags;
+        let filterList = document.getElementById(filterListId);
+        for (const tag of tags) {
+            if (!tagList.includes(tag)) {
+                tagList.push(tag);
+                const btn = document.createElement("button");
+                btn.className = "filterButton";
+                btn.href = "#";
+                btn.textContent = tag;
+                filterList.appendChild(btn);
+                btn.addEventListener("click", () => filterByKeyword(btn, articleItemsSelector, selectedTags, articles));
+            }
+        }
+    }
+}
+
 getTagList();
+
 
 // ---------------------------------------------------------------Homepage article filter by tag buttons
 
-let filterButton = document.getElementsByClassName("filterButton");
-let selectedTags = [];
 
-function filterByKeyword(btn) {
+
+
+
+function filterByKeyword(btn, articleItemsSelector, selectedTags, articles) {
     const tag = btn.textContent;
     btn.classList.toggle("selected");
     const isSelected = btn.classList.contains("selected");
-    const articleItems = document.querySelectorAll(".article-item");
+    const articleItems = document.querySelectorAll(articleItemsSelector);
 
 
     const index = selectedTags.indexOf(tag);

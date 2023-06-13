@@ -56,7 +56,6 @@ a {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    /* padding: 1em; */
     color: #fff;
 }
 
@@ -89,6 +88,29 @@ h2 {
     padding-left: 20px;
 }
 
+.intro-link {
+    display: flex;
+    padding-left: 20px;
+    flex-wrap: wrap;
+}
+.intro-button {
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #111;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    opacity: 0.7;
+}
+
+.intro-button:hover {
+    letter-spacing: 6px;
+}
+
 .menu-link {
     display: flex;
     padding-left: 10px;
@@ -108,6 +130,7 @@ h2 {
     transform: scale(0.96);
 
 }
+
 
 /* --------------------------------------HOME VIDEO MENU - END */
 
@@ -148,7 +171,8 @@ h2 {
 } */
 /* --------------------------------------BOTTOM OF PAGE NAVIGATION BUTTONS - END */
 
-#filterInput {
+#learn-filter-input,
+#play-filter-input {
     display: flex;
     padding: 10px;
     font-size: 1.1rem;
@@ -156,7 +180,8 @@ h2 {
     text-overflow: ellipsis;
 }
 
-#filterList {
+#learn-filter-list,
+#play-filter-list {
     display: flex;
     justify-content: center;
     line-height: 15px;
@@ -273,11 +298,13 @@ h2 {
 }
 
 /* an "a" tag inside/under an element with a class called article-item */
-.article-item a {
+.learnItem a,
+.playItem a {
     color: rgb(5, 150, 150);
 }
 
-.article-item a:hover {
+.learnItem a:hover,
+.playItem a:hover {
     color: rgb(196, 90, 3);
     border-bottom: 2px solid rgba(233, 113, 15, 0.938);
 }
@@ -295,11 +322,11 @@ a.link:hover {
 
 /* --------------------------------------HOME PAGE SECTIONS - START */
 #learn {
-    background-color: rgb(228, 246, 252);
+    background-color: rgb(246, 253, 255);
 }
 
-#appreciate {
-    background-color: #fff6f6;
+#play {
+    background-color: rgb(228, 246, 252);
 }
 /* --------------------------------------HOME PAGE SECTIONS - END */
 
@@ -390,5 +417,8 @@ a.link:hover {
 input {
     max-width: 100%;
 }
+
+.contentImg {
+    max-width: 100%;
 
 }

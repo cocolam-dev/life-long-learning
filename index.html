@@ -30,23 +30,24 @@
             <p>Never stop exploring. Never stop learning.</p>
             <p>Make the most of our time on this beautiful planet.</p>
 
-            <div class="menu-link">
-                <a href="#about" class="menu-button">About</a>
-                <a href="#learn" class="menu-button">Learn</a>
-                <a href="#appreciate" class="menu-button">Appreciate</a>
+            <div class="intro-link">
+                <a href="#live" class="intro-button">Explore</a>
+                <!-- <a href="#learn" class="menu-button">Learn</a>
+                <a href="#appreciate" class="menu-button">Appreciate</a> -->
             </div>
         </div>
     </section>
 
     <div class="main-menu">
         <!-- <a href="#top" class="menu-button">Home</a> -->
-        <a href="#about" class="menu-button">About</a>
+        <a href="#live" class="menu-button">Live</a>
+        <a href="#play" class="menu-button">Play</a>
         <a href="#learn" class="menu-button">Learn</a>
-        <a href="#appreciate" class="menu-button">Appreciate</a>
+
     </div>
 
-    <section class="content" id="about">
-        <h1>Life Long Learning</h1>
+    <section class="content" id="live">
+        <h1>Live</h1>
 
         <p>Each day, strive to become a better version of yourself.</p>
         <p>If you can't take a big leap, take small steps.</p>
@@ -55,28 +56,27 @@
         <p>Stay curious.</p>
 
     </section>
+    
+    <section class="content" id="play">
+        <h1>Play</h1>
+        <input type="text" id="play-filter-input" size="80" placeholder="Search articles...">
+        <br />
+        <div id="play-filter-list"></div>
+        <br />
+        <ul id="play-list" class="articleList">
+        </ul>
+    </section>
 
     <section class="content" id="learn">
         <h1>Learn</h1>
-        <input type="text" id="filterInput" size="80" placeholder="Search articles...">
+        <input type="text" id="learn-filter-input" size="80" placeholder="Search articles...">
         <br />
-        <div id="filterList"></div>
+        <div id="learn-filter-list"></div>
         <br />
-        <ul id="article-list" class="article-list">
+        <ul id="learn-list" class="articleList">
         </ul>
     </section>
 
-
-    <section class="content" id="appreciate">
-        <h1>Appreciate</h1>
-        <!-- <input type="text" id="filterInputA" size="80" placeholder="Search articles..."> -->
-        <!-- <br /> -->
-        <div id="filterListA"></div>
-        <br />
-        <ul id="article-listA" class="article-listA">
-        </ul>
-    </section>
-    <br />
 
 
     <script src="script.js"></script>
